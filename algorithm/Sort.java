@@ -14,6 +14,20 @@ public class Sort {
 				exch(a,j,j-1);
 		}
 	}
+	 //插入排序，我自己的思路
+    	private static void insertionSortFan(Comparable[] a){
+		for(int i=1;i<a.length;i++){
+		    if(less(a[i],a[i-1])) {
+			exch(a,i,i-1);
+			for(int j=i-1;j>0;j--){
+			    if(less(a[j],a[j-1]))
+				exch(a,j,j-1);
+			}
+		    }
+
+		}
+	    }
+	
 	public static boolean less(Comparable v,Comparable w){
 		return v.compareTo(w)<0;
 	}
